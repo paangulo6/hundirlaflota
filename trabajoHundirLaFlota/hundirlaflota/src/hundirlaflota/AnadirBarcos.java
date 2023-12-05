@@ -46,7 +46,7 @@ public class AnadirBarcos {
 				
 			}
 		}
-		this.barcos.addBarco(num+"Barrco"+letras.size(), posicion);
+		this.barcos.addBarco(num+"Barco"+letras.size(), posicion);
 		return estabien;
 	}
 

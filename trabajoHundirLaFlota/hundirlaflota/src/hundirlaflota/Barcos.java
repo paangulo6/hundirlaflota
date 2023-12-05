@@ -55,6 +55,107 @@ public class Barcos implements Serializable{
 			return false;
 		}
 		
+		public boolean eliminarBarco(String clave) {
+			String nombre="1Barco4";
+			ArrayList<String> l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}
+			nombre="1Barco3";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}
+			nombre="2Barco3";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}
+			nombre="1Barco2";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}
+			nombre="2Barco2";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}
+			nombre="3Barco2";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}
+			nombre="1Barco1";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}
+			nombre="2Barco1";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}nombre="3Barco1";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}nombre="4Barco1";
+			l= barcos.get(nombre);
+			for(String s: l) {
+				if(s.equals(clave)) {
+					ArrayList<String> laux= elimbar(l, clave);
+					barcos.replace(nombre, laux);
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		public ArrayList<String> elimbar(ArrayList<String> l,String clave){
+			ArrayList<String> sol= new ArrayList<String>();
+			for(int i=0; i<l.size(); i++) {
+				if(! l.get(i).equals(clave)) {
+					sol.add(l.get(i));
+				}
+			}
+			return sol;
+		}
 		
 	
 }

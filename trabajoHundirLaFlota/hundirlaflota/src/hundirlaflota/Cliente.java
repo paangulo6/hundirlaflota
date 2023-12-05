@@ -23,7 +23,7 @@ public class Cliente {
 		while (estabien == false) {
 			letras = new ArrayList();
 			numeros = new ArrayList();
-			System.out.println("1º Barrco de 4 casillas");
+			System.out.println("1º barco de 4 casillas");
 			for (int i = 0; i <= 3; i++) {
 				System.out.println("Introzuca la letra de fila en la que quiere colacar el barco");
 				String letra = s.next();
@@ -41,7 +41,7 @@ public class Cliente {
 		}
 		tablero = abarcos.getTablero();
 		tablero.mostrarTablero();
-		System.out.println("1º Barrco de 4 casillas introducido correctamente");
+		System.out.println("1º barco de 4 casillas introducido correctamente");
 
 		int numbarco = 1;
 		while (numbarco <= 2) {
@@ -49,7 +49,7 @@ public class Cliente {
 			while (estabien == false) {
 				letras = new ArrayList();
 				numeros = new ArrayList();
-				System.out.println(numbarco + "º Barrco de 3 casillas");
+				System.out.println(numbarco + "º barco de 3 casillas");
 				for (int i = 0; i <= 2; i++) {
 					System.out.println("Introzuca la letra de fila en la que quiere colacar el barco");
 					String letra = s.next();
@@ -67,7 +67,7 @@ public class Cliente {
 			}
 			tablero = abarcos.getTablero();
 			tablero.mostrarTablero();
-			System.out.println(numbarco + "º Barrco de 3 casillas introducido correctamente");
+			System.out.println(numbarco + "º barco de 3 casillas introducido correctamente");
 			numbarco++;
 		}
 
@@ -77,7 +77,7 @@ public class Cliente {
 			while (estabien == false) {
 				letras = new ArrayList();
 				numeros = new ArrayList();
-				System.out.println(numbarco + "º Barrco de 2 casillas");
+				System.out.println(numbarco + "º barco de 2 casillas");
 				for (int i = 0; i <= 1; i++) {
 					System.out.println("Introzuca la letra de fila en la que quiere colacar el barco");
 					String letra = s.next();
@@ -95,7 +95,7 @@ public class Cliente {
 			}
 			tablero = abarcos.getTablero();
 			tablero.mostrarTablero();
-			System.out.println(numbarco + "º Barrco de 2 casillas introducido correctamente");
+			System.out.println(numbarco + "º barco de 2 casillas introducido correctamente");
 			numbarco++;
 		}
 		numbarco = 1;
@@ -104,7 +104,7 @@ public class Cliente {
 			while (estabien == false) {
 				letras = new ArrayList();
 				numeros = new ArrayList();
-				System.out.println(numbarco + "º Barrco de 1 casillas");
+				System.out.println(numbarco + "º barco de 1 casillas");
 				System.out.println("Introzuca la letra de fila en la que quiere colacar el barco");
 				String letra = s.next();
 				letras.add(letra);
@@ -120,7 +120,7 @@ public class Cliente {
 			}
 			tablero = abarcos.getTablero();
 			tablero.mostrarTablero();
-			System.out.println(numbarco + "º Barrco de 2 casillas introducido correctamente");
+			System.out.println(numbarco + "º barco de 2 casillas introducido correctamente");
 			numbarco++;
 		}
 
@@ -128,10 +128,34 @@ public class Cliente {
 		System.out.println("Tu tablero queda:");
 		tablero.mostrarTablero();
 		barcos=abarcos.getBarcos();
-		HashMap<String, ArrayList<String>>  b= barcos.getBarcos();
-		System.out.println("Tu tablero queda:");
-		System.out.println("Tu tablero queda:");
-		System.out.println("Tu tablero queda:");
+		System.out.println("Empezamos a jugar.");
+		System.out.println("Tu tablero saldra el primero y el de tu contricante el segundo");
+		System.out.println("Cuando tu contrincante diga una posicion y no haya tocado agua en tu tablero aparecera O (agua)");
+		System.out.println("Cuando tu contrincante diga una posicion  y toque uno de tus barcos aparecera una H");
+		System.out.println("Cuando tu contricante te hunda un barco saldra que te ha hundidio el barco y el barco que te haya hundido");
+		System.out.println("El jugador 1 empieza la partida.");
+		
+		
+		
+		try(Socket socket= new Socket("localhosr", 5678);
+				DataInputStream dis= new DataInputStream(socket.getInputStream());
+				DataOutputStream dos= new DataOutputStream(socket.getOutputStream());
+				){
+			ObjectOutputStream oos= new ObjectOutputStream(socket.getOutputStream());
+			
+			int numjug= dis.read();
+			
+			
+			
+			
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 
@@ -149,7 +173,7 @@ public class Cliente {
 		System.out.println("            3 barco de 2 casillas");
 		System.out.println("            3 barco de 1 casillas");
 		System.out.println("En total 20 casillas");
-		System.out.println("Normas para colocar los barrcos: ");
+		System.out.println("Normas para colocar los barcos: ");
 		System.out.println("            1. Los barcos pueden estar al borde de la cuadricula");
 		System.out.println(
 				"            2. Los barcos no pueden superponerse, es decir si uno de tus barcos esta en la 1 A otro de tus barcos no puede estar en la 1 A. ");
